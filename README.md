@@ -58,3 +58,30 @@ Fontes:
 ## Autor
 
 [Seu nome aqui]
+
+Avaliação do Projeto Integrador: Catálogo de Celulares
+Visão geral
+
+O projeto apresenta boa qualidade técnica e organização acima do esperado para a atividade. O código é limpo, seguro e bem estruturado, com interatividade completa e atenção à acessibilidade. Alguns itens específicos do checklist da Aula 11 ainda podem ser complementados.
+
+Nota estimada: 8,0 de 10 para o checklist da atividade, e cerca de 9,0 considerando o projeto como um todo.
+
+Pontos fortes
+Manipulação segura do DOM: os elementos são criados com createElement, textContent e append, por meio de uma função auxiliar reutilizável. Não há uso de innerHTML.
+Boas práticas de JavaScript: uso de const e let (sem var), código dentro de DOMContentLoaded, um único ouvinte de eventos na lista (event delegation) e localStorage protegido com try/catch.
+Cuidado com os dados: o sort é aplicado sempre em cópias do array, o que evita o Erro 4.
+Dados coerentes: o array tem 10 celulares com várias propriedades, e a contagem por faixa no README confere com os dados.
+Acessibilidade e semântica: labels, regiões aria-live, link de salto, foco visível e respeito a prefers-reduced-motion.
+Estrutura do repositório: README organizado, .gitignore adequado, vídeo com dois formatos, poster e legendas.
+Pontos a complementar
+
+Estes itens fazem parte do checklist da atividade e não foram encontrados nos arquivos:
+
+Resumo com reduce: o código usa map e filter, mas não há reduce. A atividade pede uma linha de resumo na página (total, média ou contagem), por exemplo “Preço médio da lista exibida”.
+Parâmetro com valor padrão: nenhuma função possui esse recurso. Um exemplo simples seria formatarNota(nota, casas = 1).
+Função de processamento: hoje existem funções que classificam e formatam, mas nenhuma que calcule algo. Uma função como calcularCustoBeneficio(nota, preco) completaria o padrão processar → classificar → mostrar.
+Dados originais preservados: a linha que acrescenta faixa aos objetos de CELULARES altera o array de origem. O recomendado é gerar novos objetos com map: { ...celular, faixa: classificarFaixa(celular.preco) }.
+Verificação de elementos nulos: falta confirmar que a área de resultado foi encontrada antes de usá-la, por exemplo if (!lista) return;.
+Uso de classList: a classe da faixa é aplicada por className. Trocar por classList.add atende ao checklist sem alterar o resultado visual.
+Testes no Console: como as funções estão dentro do DOMContentLoaded, não podem ser chamadas pelo Console. Mover as funções de cálculo para fora desse bloco facilita o teste e a separação entre cálculo e página.
+
